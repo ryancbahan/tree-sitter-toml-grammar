@@ -1,0 +1,108 @@
+==================
+Basic Strings
+==================
+
+basic_string = "This is a basic string"
+escaped_string = "This has \"quotes\" and \\ backslash"
+escaped_chars = "This has\tescape\nsequences"
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string)))
+
+==================
+Multi-line Basic Strings
+==================
+
+multiline_basic = """
+This is a multi-line string
+with line breaks"""
+
+line_ending_backslash = """
+This line \
+continues on this line
+"""
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string)))
+
+==================
+Literal Strings
+==================
+
+literal_string = 'C:\Users\example'
+literal_quotes = 'String with "quotes"'
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string)))
+
+==================
+Multi-line Literal Strings
+==================
+
+multiline_literal = '''
+This is a multi-line literal
+with 'single quotes' inside'''
+
+multiline_literal_with_quotes = '''Here are some quotes: """""'''
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string)))
+
+==================
+Unicode Strings
+==================
+
+unicode = "You can use unicode like: こんにちは"
+unicode_escape = "Unicode escape: \u00E9 and \U0001F602"
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string))) 

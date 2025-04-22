@@ -1,0 +1,40 @@
+===================
+Inline Tables
+===================
+
+point = { x = 1, y = 2 }
+animal = { type.name = "pug" }
+name = { first = "Tom", last = "Preston-Werner" }
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (inline_table
+      (inline_key_value
+        key: (key (bare_key))
+        value: (integer))
+      (inline_key_value
+        key: (key (bare_key))
+        value: (integer))))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (inline_table
+      (inline_key_value
+        key: (key (dotted_key
+          table_key: (key (bare_key))
+          member_key: (bare_key)))
+        value: (string))))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (inline_table
+      (inline_key_value
+        key: (key (bare_key))
+        value: (string))
+      (inline_key_value
+        key: (key (bare_key))
+        value: (string))))) 

@@ -1,0 +1,173 @@
+==================
+Integer Numbers
+==================
+
+int1 = 42
+int2 = +99
+int3 = -17
+int4 = 0
+large_int = 1_000_000
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer)))
+
+==================
+Hexadecimal, Octal, and Binary
+==================
+
+hex = 0xDEADBEEF
+hex_lower = 0xdeadbeef
+hex_underscore = 0xdead_beef
+octal = 0o01234567
+binary = 0b11010110
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer)))
+
+==================
+Float Numbers - Fractional
+==================
+
+float1 = 3.1415
+float2 = +1.0
+float3 = -0.01
+float4 = 224_617.445_991
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float)))
+
+==================
+Float Numbers - Exponent
+==================
+
+exp1 = 5e+22
+exp2 = 1e06
+exp3 = -2E-2
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float)))
+
+==================
+Float Numbers - Combined
+==================
+
+combined = 6.626e-34
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float)))
+
+==================
+Special Float Values
+==================
+
+inf_value = inf
+pos_inf = +inf
+neg_inf = -inf
+nan_value = nan
+pos_nan = +nan
+neg_nan = -nan
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (float))) 

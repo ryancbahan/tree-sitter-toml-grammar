@@ -1,0 +1,154 @@
+==================
+Simple Arrays
+==================
+
+integers = [ 1, 2, 3 ]
+colors = [ "red", "yellow", "green" ]
+mixed = [ 1, 2.5, "string", true ]
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (integer)
+      (integer)
+      (integer)))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (string)
+      (string)
+      (string)))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (integer)
+      (float)
+      (string)
+      (boolean))))
+
+==================
+Nested Arrays
+==================
+
+nested_ints = [ [ 1, 2 ], [3, 4, 5] ]
+nested_mixed = [ [ 1, 2 ], ["a", "b", "c"] ]
+string_types = [ "all", 'strings', """are the same""", '''type''' ]
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (array
+        (integer)
+        (integer))
+      (array
+        (integer)
+        (integer)
+        (integer))))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (array
+        (integer)
+        (integer))
+      (array
+        (string)
+        (string)
+        (string))))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (string)
+      (string)
+      (string)
+      (string))))
+
+==================
+Multi-line Arrays
+==================
+
+# Multi-line arrays
+multiline_array = [
+  1,
+  2,
+  3
+]
+
+multiline_with_comment = [
+  1,
+  2, # comment
+]
+
+empty_array = []
+
+trailing_comma = [
+  1,
+  2,
+]
+
+---
+
+(source_file
+  (comment)
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (integer)
+      (integer)
+      (integer)))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (integer)
+      (integer)
+      (comment)))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array))
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (integer)
+      (integer))))
+
+==================
+Mixed Complex Array
+==================
+
+complex = [
+  "string",
+  { key = "value" },
+  [ 1, 2, 3 ]
+]
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (array
+      (string)
+      (inline_table
+        (inline_key_value
+          key: (key (bare_key))
+          value: (string)))
+      (array
+        (integer)
+        (integer)
+        (integer))))) 

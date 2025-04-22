@@ -27,8 +27,8 @@ module.exports = grammar({
 
   // Define external tokens handled by scanner.c
   externals: $ => [
-    $._multiline_basic_string_content,
-    $._multiline_literal_string_content,
+    $.__multiline_basic_string_content, // Hidden
+    $.__multiline_literal_string_content, // Hidden
     // Potentially add error recovery token here later
     // $.error_sentinel
   ],
@@ -140,7 +140,7 @@ module.exports = grammar({
       '"',
       repeat(choice(
         token.immediate(prec(1, /[^\\"%\n]+/)), // Content (not \\, ", % or newline) - % is used by tree-sitter internally
-        $.escape_sequence
+        $._escape_sequence // Use hidden escape sequence
       )),
       '"'
     ),
@@ -155,18 +155,18 @@ module.exports = grammar({
      // Multiline Basic String (uses external scanner)
      _multiline_basic_string: $ => seq(
        '"""',
-       alias(repeat($._multiline_basic_string_content), $.string_content), // Use alias for content
+       repeat($.__multiline_basic_string_content), // Use hidden token
        '"""'
      ),
 
     // Multiline Literal String (uses external scanner)
     _multiline_literal_string: $ => seq(
-      "'''",
-      alias(repeat($._multiline_literal_string_content), $.string_content), // Use alias for content
-      "'''"
+      "\'\'\'",
+      repeat($.__multiline_literal_string_content), // Use hidden token
+      "\'\'\'"
     ),
 
-    escape_sequence: $ => token.immediate(seq(
+    _escape_sequence: $ => token.immediate(seq( // Renamed to hide
       '\\',
       choice(
         /[\"\\bfnrt]/, // Simple escapes

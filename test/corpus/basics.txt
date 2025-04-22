@@ -1,0 +1,53 @@
+==================
+Simple Key Value
+==================
+
+title = "TOML Example"
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (string)))
+
+==================
+Comment Only
+==================
+
+# This is a comment
+
+---
+
+(source_file
+  (comment))
+
+
+==================
+Integer Key Value
+==================
+
+answer = 42
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (integer)))
+
+==================
+Boolean Key Value
+==================
+
+enabled = true
+
+---
+
+(source_file
+  (key_value
+    key: (key
+      (bare_key))
+    value: (boolean))) 
