@@ -21,10 +21,7 @@
       {
         "name": "Ryan Bahan"
       }
-    ],
-    "links": {
-      "repository": "https://github.com/tree-sitter/tree-sitter-toml"
-    }
+    ]
   },
   "bindings": {
     "c": true,
