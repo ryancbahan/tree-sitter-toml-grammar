@@ -1,8 +1,8 @@
 {
-  "name": "tree-sitter-toml",
-  "version": "0.1.0",
+  "name": "tree-sitter-toml-grammar",
+  "version": "0.1.1",
   "description": "Toml grammar for tree-sitter",
-  "repository": "https://github.com/tree-sitter/tree-sitter-toml",
+  "repository": "https://github.com/ryancbahan/tree-sitter-toml-grammar",
   "license": "MIT",
   "author": {
     "name": "Ryan Bahan"
