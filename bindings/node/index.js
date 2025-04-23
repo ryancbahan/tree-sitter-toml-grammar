@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const napi = require('node-addon-api'); // Require node-addon-api
 
 let languageBinding;
 
@@ -14,13 +15,14 @@ const prebuildFile = path.join(prebuildDir, prebuildFileName);
 console.log(`[Toml Bindings] Checking for prebuild at: ${prebuildFile}`);
 
 if (fs.existsSync(prebuildFile)) {
-    console.log(`[Toml Bindings] Prebuild found. Attempting to load directly.`);
+    console.log(`[Toml Bindings] Prebuild found. Attempting to load via NAPI load.`);
     try {
-        languageBinding = require(prebuildFile);
-        console.log('[Toml Bindings] Successfully loaded prebuild directly:', languageBinding);
+        // Use napi.load, providing the directory as context
+        languageBinding = napi.load(prebuildDir, prebuildFileName);
+        console.log('[Toml Bindings] Successfully loaded prebuild via NAPI load:', languageBinding);
     } catch (e) {
-        console.error(`[Toml Bindings] Error loading prebuild directly (${prebuildFile}):`, e);
-        languageBinding = { language: { loadError: "Failed loading prebuild" } };
+        console.error(`[Toml Bindings] Error loading prebuild via NAPI load (${prebuildFile}):`, e);
+        languageBinding = { language: { loadError: "Failed loading prebuild via NAPI load" } };
     }
 } else {
     console.error(`[Toml Bindings] Prebuild not found at ${prebuildFile}. Cannot load native module. Please ensure prebuilds were generated and included.`);
