@@ -7,7 +7,9 @@ let languageBinding;
 const platform = process.platform;
 const arch = process.arch;
 const prebuildDir = path.join(__dirname, '..', '..', 'prebuilds', `${platform}-${arch}`);
-const prebuildFile = path.join(prebuildDir, 'node.napi.node');
+// const prebuildFile = path.join(prebuildDir, 'node.napi.node'); // Old conventional name
+const prebuildFileName = 'tree-sitter-toml-grammar.node'; // Use the actual name generated/published
+const prebuildFile = path.join(prebuildDir, prebuildFileName);
 
 console.log(`[Toml Bindings] Checking for prebuild at: ${prebuildFile}`);
 
