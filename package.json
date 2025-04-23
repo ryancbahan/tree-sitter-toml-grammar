@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-toml-grammar",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Toml grammar for tree-sitter",
   "repository": "https://github.com/ryancbahan/tree-sitter-toml-grammar",
   "license": "MIT",
@@ -27,8 +27,7 @@
     "*.wasm"
   ],
   "dependencies": {
-    "node-addon-api": "^8.2.1",
-    "node-gyp-build": "^4.8.2"
+    "node-addon-api": "^8.2.1"
   },
   "devDependencies": {
     "prebuildify": "^6.0.1",
