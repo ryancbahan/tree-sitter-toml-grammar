@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-toml-grammar",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Toml grammar for tree-sitter",
   "repository": "https://github.com/ryancbahan/tree-sitter-toml-grammar",
   "license": "MIT",
@@ -45,6 +45,7 @@
   },
   "scripts": {
     "install": "node-gyp-build",
+    "prebuild": "prebuildify --napi",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js"

@@ -34,11 +34,21 @@ if (isBun) {
 }
 
 // Check the loaded object immediately
-if (!languageBinding || !languageBinding.language || Object.keys(languageBinding.language).length === 0 && languageBinding.language.constructor === Object) {
-     console.error('[Toml Bindings] CRITICAL: Loaded object is missing or has an empty/invalid language property:', JSON.stringify(languageBinding));
+// Check if languageBinding exists, has a language property, and that property is NOT a plain empty object.
+const isLanguagePropertyInvalid = !languageBinding || 
+                                 !languageBinding.hasOwnProperty('language') || 
+                                 (typeof languageBinding.language === 'object' && 
+                                  languageBinding.language !== null && 
+                                  Object.keys(languageBinding.language).length === 0 && 
+                                  languageBinding.language.constructor === Object);
+
+if (isLanguagePropertyInvalid) {
+     console.error('[Toml Bindings] CRITICAL: Loaded object is missing or has an invalid language property (likely empty object):', JSON.stringify(languageBinding));
      // Assign a clearly identifiable dummy object for debugging if it failed
      if (!languageBinding) languageBinding = {};
-     languageBinding.language = { loadError: "Failed to load native module" };
+     // Ensure language property exists before assigning to it
+     if (!languageBinding.hasOwnProperty('language')) languageBinding.language = {}; 
+     languageBinding.language.loadError = "Failed to load native module or module invalid";
 } else {
     console.log('[Toml Bindings] Native language object appears valid after loading.');
 }
